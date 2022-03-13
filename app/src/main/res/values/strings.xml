@@ -1,3 +1,9 @@
 <resources>
-    <string name="app_name">potencial-crypto</string>
+    <string name="app_name">Potencial crypto</string>
+
+    <!-- Button navigation-->
+    <string name="action_crypto">Cryptos</string>
+    <string name="action_potential_crypto">Potencial</string>
+    <string name="action_info_crypto">Conoce mas</string>
+    <string name="action_settings">Settings</string>
 </resources>
