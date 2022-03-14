@@ -1,9 +1,7 @@
 package cripto.potencial.tjdian.features.main.presentation
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
-import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import cripto.potencial.tjdian.R
@@ -12,9 +10,11 @@ import cripto.potencial.tjdian.features.cryptocurrency.presentation.CryptoCurren
 import cripto.potencial.tjdian.features.cryptoinformation.presentation.CryptoInformationFragment
 import cripto.potencial.tjdian.features.cryptopotential.presentation.CryptoPotentialFragment
 import cripto.potencial.tjdian.features.settings.presentation.SettingsFragment
+import dagger.hilt.android.AndroidEntryPoint
 
-
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
+    
     private val binding: ActivityMainBinding by lazy {
         ActivityMainBinding.inflate(layoutInflater)
     }

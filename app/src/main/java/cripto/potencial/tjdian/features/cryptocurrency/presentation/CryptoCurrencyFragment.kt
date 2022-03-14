@@ -5,10 +5,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import cripto.potencial.tjdian.databinding.FragmentCurrencyCryptoBinding
+import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
-class CryptoCurrencyFragment:Fragment(){
+@AndroidEntryPoint
+class CryptoCurrencyFragment @Inject constructor() : Fragment() {
     private lateinit var binding: FragmentCurrencyCryptoBinding
+
+    private val viewModelCrypto: CryptoCurrencyViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -19,9 +25,14 @@ class CryptoCurrencyFragment:Fragment(){
         return binding.root
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        /*  viewModelCrypto.loadCoins()*/
+    }
 
-    companion object{
-        fun createInstance()= CryptoCurrencyFragment()
+
+    companion object {
+        fun createInstance() = CryptoCurrencyFragment()
     }
 
 }

@@ -6,8 +6,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import cripto.potencial.tjdian.databinding.FragmentInformationCryptoBinding
+import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
-class CryptoInformationFragment : Fragment() {
+@AndroidEntryPoint
+class CryptoInformationFragment @Inject constructor() : Fragment() {
 
     private lateinit var binding: FragmentInformationCryptoBinding
 
