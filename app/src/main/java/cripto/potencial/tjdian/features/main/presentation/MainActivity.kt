@@ -12,6 +12,7 @@ import cripto.potencial.tjdian.features.cryptopotential.presentation.CryptoPoten
 import cripto.potencial.tjdian.features.settings.presentation.SettingsFragment
 import dagger.hilt.android.AndroidEntryPoint
 
+
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
     
