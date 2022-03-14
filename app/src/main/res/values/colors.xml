@@ -9,18 +9,19 @@
     <color name="white">#FFFFFFFF</color>
 
 
-    <!-- Colores coorporativos, de marca. No cambian -->
-    <color name="brand_redwine">#800000</color>
-    <color name="brand_orange">#ffb600</color>
-    <!-- Colores asociados a la app -->
-    <color name="app_white">#FFFFFF</color>
-    <color name="app_black">#000000</color>
-    <color name="app_gray">#888888</color>
-    <color name="app_lightgray">#fbfbfb</color>
-    <color name="app_black87">#DE000000</color>
-    <color name="app_black60">#99000000</color>
-    <color name="app_black38">#61000000</color>
-    <color name="app_white87">#DEFFFFFF</color>
-    <color name="app_white60">#99FFFFFF</color>
-    <color name="app_white38">#61FFFFFF</color>
+    <color name="primaryColor">#f7931a</color>
+
+    <color name="primaryLightColor">#ffc451</color>
+
+    <color name="primaryDarkColor">#be6500</color>
+
+    <color name="secondaryColor">#212121</color>
+
+    <color name="secondaryLightColor">#484848</color>
+
+    <color name="secondaryDarkColor">#000000</color>
+
+    <color name="primaryTextColor">#000000</color>
+
+    <color name="secondaryTextColor">#ffffff</color>
 </resources>

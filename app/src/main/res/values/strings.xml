@@ -6,4 +6,11 @@
     <string name="action_potential_crypto">Potencial</string>
     <string name="action_info_crypto">Conoce mas</string>
     <string name="action_settings">Settings</string>
+
+
+
+    <string name="title_exit_app_are_you_sure">Salir de la aplicación</string>
+    <string name="message_exit_app_are_you_sure">¿Estas seguro/a que deseas salir de la aplicación?</string>
+    <string name="yes_exit">Si, salir</string>
+    <string name="no_exit">No</string>
 </resources>
