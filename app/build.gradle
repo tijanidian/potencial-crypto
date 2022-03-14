@@ -50,4 +50,19 @@ dependencies {
 
     //SplashScreen
     implementation 'androidx.core:core-splashscreen:1.0.0-beta01'
+
+    //Coroutines
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.6.0'
+
+    //Gson: Serializer
+    implementation 'com.google.code.gson:gson:2.8.9'
+
+    //Preference
+    implementation "androidx.preference:preference-ktx:1.2.0"
+
+    //Retrofit
+    implementation('com.squareup.retrofit2:retrofit:2.9.0') {
+        exclude module: 'okhttp'
+    }
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
 }
