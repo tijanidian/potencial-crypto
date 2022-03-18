@@ -3,16 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/potencialcrypto/app/src/main/res/drawable/splash_background.xml" value="0.17" />
+        <entry key="..\:/potencial-crypto/app/src/main/res/layout/activity_main.xml" value="0.36666666666666664" />
+        <entry key="..\:/potencial-crypto/app/src/main/res/layout/fragment_currency_crypto.xml" value="0.33" />
+        <entry key="..\:/potencial-crypto/app/src/main/res/layout/view_item_crypto.xml" value="0.25" />
         <entry key="..\:/potencialcrypto/app/src/main/res/layout/activity_main.xml" value="0.36666666666666664" />
-        <entry key="..\:/potencialcrypto/app/src/main/res/layout/activity_splash.xml" value="0.36666666666666664" />
-        <entry key="..\:/potencialcrypto/app/src/main/res/layout/fragment_currency_crypto.xml" value="0.36666666666666664" />
-        <entry key="..\:/potencialcrypto/app/src/main/res/layout/fragment_information_crypto.xml" value="0.22" />
-        <entry key="..\:/potencialcrypto/app/src/main/res/layout/fragment_potential_crypto.xml" value="0.15" />
-        <entry key="..\:/potencialcrypto/app/src/main/res/layout/fragment_settings.xml" value="0.9" />
-        <entry key="..\:/potencialcrypto/app/src/main/res/layout/splash_background.xml" value="0.36666666666666664" />
-        <entry key="..\:/potencialcrypto/app/src/main/res/layout/view_custom_toolbar.xml" value="0.36666666666666664" />
-        <entry key="..\:/potencialcrypto/app/src/main/res/menu/home_menu.xml" value="0.36666666666666664" />
       </map>
     </option>
   </component>
