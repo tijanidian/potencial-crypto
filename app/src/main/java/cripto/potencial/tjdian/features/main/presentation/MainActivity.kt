@@ -72,7 +72,9 @@ class MainActivity : AppCompatActivity() {
         showFragment(CryptoCurrencyFragment.createInstance())
     }
 
+    fun showLoadingProgress() = binding.viewProgressIndicator.show()
 
+    fun hideLoadingProgress() = binding.viewProgressIndicator.hide()
     override fun onBackPressed() {
         if (supportFragmentManager.backStackEntryCount == 0) {
             MaterialAlertDialogBuilder(this)

@@ -13,6 +13,7 @@ import cripto.potencial.tjdian.databinding.FragmentCurrencyCryptoBinding
 import cripto.potencial.tjdian.features.cryptocurrency.app.presentation.UiState
 import cripto.potencial.tjdian.features.cryptocurrency.domain.CoinModel
 import cripto.potencial.tjdian.features.cryptocurrency.presentation.adapter.CryptoAdapter
+import cripto.potencial.tjdian.features.main.presentation.MainActivity
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
@@ -43,9 +44,6 @@ class CryptoCurrencyFragment @Inject constructor() : Fragment() {
         binding.coinList.adapter = eventAdapter
         binding.coinList.layoutManager =
             LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
-
-
-
     }
     private fun setupViewStateObserver() {
         val observer = Observer<UiState<List<CoinModel>>> {
@@ -58,12 +56,17 @@ class CryptoCurrencyFragment @Inject constructor() : Fragment() {
         viewModelCrypto.eventUIState.observe(this.viewLifecycleOwner, observer)
     }
     private fun showLoading() {
+        (requireActivity() as MainActivity).showLoadingProgress()
     }
     private fun loadEvents(events: List<CoinModel>) {
+        hideLoading()
         eventAdapter.submitList(events)
     }
     private fun showEventError() {
 
+    }
+    private fun hideLoading() {
+        (requireActivity() as MainActivity).hideLoadingProgress()
     }
 
     companion object {
