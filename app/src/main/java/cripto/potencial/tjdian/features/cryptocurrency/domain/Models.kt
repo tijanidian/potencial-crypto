@@ -1,13 +1,14 @@
 package cripto.potencial.tjdian.features.cryptocurrency.domain
 
 data class CoinModel(
-    val block_time_in_minutes: String?,
+    val image: String?,
     val id: String?,
-    val image: ImageModel?,
-    val last_updated: String?,
-    /*val market_data: MarketData,*/
     val name: String?,
-    val symbol: String?
+    val symbol: String?,
+    val current_price:Any?,
+    val market_cap: Any?,
+    val total_supply: Any?,
+
 )
 
 data class ImageModel(

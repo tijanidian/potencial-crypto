@@ -43,9 +43,7 @@ class CryptoCurrencyFragment @Inject constructor() : Fragment() {
         binding.coinList.adapter = eventAdapter
         binding.coinList.layoutManager =
             LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
-        binding.coinList.addItemDecoration(
-            DividerItemDecoration(context, LinearLayoutManager.VERTICAL)
-        )
+
 
 
     }
