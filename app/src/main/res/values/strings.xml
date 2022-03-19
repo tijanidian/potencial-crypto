@@ -1,3 +1,24 @@
 <resources>
-    <string name="app_name">potencial-crypto</string>
+    <string name="app_name">Potencial crypto</string>
+
+    <!-- Button navigation-->
+    <string name="action_crypto">Cryptos</string>
+    <string name="action_potential_crypto">Potencial</string>
+    <string name="action_info_crypto">Conoce mas</string>
+    <string name="action_settings">Settings</string>
+
+    <!--Close app-->
+    <string name="title_exit_app_are_you_sure">Salir de la aplicación</string>
+    <string name="message_exit_app_are_you_sure">¿Estas seguro/a que deseas salir de la aplicación?</string>
+    <string name="yes_exit">Si, salir</string>
+    <string name="no_exit">No</string>
+
+    <!-- view item crypto-->
+    <string name="market_cap">Mark.cap: %1$s</string>
+    <string name="total_supply">Supply: %1$s</string>
+    <string name="crypto_symbol">(%1$s) </string>
+    <string name="crypto_price">%1$s € </string>
+    <string name="empty_supply">Supply no disponible </string>
+
+
 </resources>
