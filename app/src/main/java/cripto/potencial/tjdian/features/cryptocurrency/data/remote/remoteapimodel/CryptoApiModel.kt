@@ -1,8 +1,8 @@
-package cripto.potencial.tjdian.features.cryptocurrency.data.remote
+package cripto.potencial.tjdian.features.cryptocurrency.data.remote.remoteapimodel
 
 import cripto.potencial.tjdian.features.cryptocurrency.domain.CoinModel
 
-data class RemoteApiModel(
+data class CryptoApiModel(
     val ath: Any?,
     val ath_change_percentage: Any?,
     val ath_date: String?,

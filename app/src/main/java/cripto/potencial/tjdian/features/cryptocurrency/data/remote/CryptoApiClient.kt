@@ -1,12 +1,13 @@
 package cripto.potencial.tjdian.features.cryptocurrency.data.remote
 
+import cripto.potencial.tjdian.features.cryptocurrency.data.remote.remoteapimodel.CryptoApiModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import javax.inject.Inject
 
 class CryptoApiClient @Inject constructor(private val cryptoApiEndPoint: CryptoApiEndPoint) {
 
-    suspend fun getAllCoins(): Result<List<RemoteApiModel>> = withContext(Dispatchers.IO) {
+    suspend fun getAllCoins(): Result<List<CryptoApiModel>> = withContext(Dispatchers.IO) {
         return@withContext try {
             val call = cryptoApiEndPoint.getCoins()
             if (call.isSuccessful) {
