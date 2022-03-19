@@ -24,4 +24,10 @@
     <color name="primaryTextColor">#000000</color>
 
     <color name="secondaryTextColor">#ffffff</color>
+
+
+    <!--Colors Botton Nav Bar-->
+    <color name="seconFragmentColor">#F44336</color>
+    <color name="ThirdFragmentColor">#4CAF50</color>
+    <color name="QuarterFragmentColor">#2196F3</color>
 </resources>

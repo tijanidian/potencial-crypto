@@ -15,7 +15,7 @@ import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
-    
+
     private val binding: ActivityMainBinding by lazy {
         ActivityMainBinding.inflate(layoutInflater)
     }
@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    private fun setUpView(){
+    private fun setUpView() {
         setupToolbar()
         setupMenuButtonListener()
     }
@@ -40,24 +40,13 @@ class MainActivity : AppCompatActivity() {
 
     private fun setupMenuButtonListener() {
         binding.bottomNavigationView.setOnItemSelectedListener {
-            when (it.itemId) {
-                R.id.action_crypto -> {
-                    showFragment(CryptoCurrencyFragment.createInstance())
-                    true
-                }
-                R.id.action_potential_crypto -> {
-                    showFragment(CryptoPotentialFragment.createInstance())
-                    true
-                }
-                R.id.action_info_crypto -> {
-                    showFragment(CryptoInformationFragment.createInstance())
-                    true
-                }
-                R.id.action_settings -> {
-                    showFragment(SettingsFragment.createInstance())
-                    true
-                }
-                else -> super.onOptionsItemSelected(it)
+            when (it) {
+                R.id.action_crypto -> showFragment(CryptoCurrencyFragment.createInstance())
+                R.id.action_potential_crypto ->        showFragment(CryptoPotentialFragment.createInstance())
+                R.id.action_settings ->    showFragment(SettingsFragment.createInstance())
+
+                R.id.action_info_crypto -> showFragment(CryptoInformationFragment.createInstance())
+
             }
         }
     }

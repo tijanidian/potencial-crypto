@@ -1,27 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
         android:id="@+id/action_crypto"
-        android:enabled="true"
         android:icon="@drawable/ic_currency_bitcoin_black_24dp"
-        android:title="@string/action_crypto" />
+        android:title="@string/action_crypto"
+        app:cnb_iconColor="@color/primaryColor"
+        />
 
     <item
         android:id="@+id/action_potential_crypto"
-        android:enabled="true"
         android:icon="@drawable/ic_local_atm_black_24dp"
-        android:title="@string/action_potential_crypto" />
+        android:title="@string/action_potential_crypto"
+        app:cnb_iconColor="@color/seconFragmentColor"
+        />
 
     <item
         android:id="@+id/action_info_crypto"
-        android:enabled="true"
+        app:cnb_iconColor="@color/ThirdFragmentColor"
         android:icon="@drawable/ic_calculate_black_24dp"
         android:title="@string/action_info_crypto" />
 
     <item
         android:id="@+id/action_settings"
-        android:enabled="true"
+        app:cnb_iconColor="@color/QuarterFragmentColor"
         android:icon="@drawable/ic_settings_black_24dp"
         android:title="@string/action_settings" />
 </menu>
