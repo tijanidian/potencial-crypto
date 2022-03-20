@@ -6,25 +6,23 @@
         android:id="@+id/action_crypto"
         android:icon="@drawable/ic_currency_bitcoin_black_24dp"
         android:title="@string/action_crypto"
-        app:cnb_iconColor="@color/primaryColor"
+
         />
 
     <item
         android:id="@+id/action_potential_crypto"
         android:icon="@drawable/ic_local_atm_black_24dp"
         android:title="@string/action_potential_crypto"
-        app:cnb_iconColor="@color/seconFragmentColor"
+
         />
 
     <item
         android:id="@+id/action_info_crypto"
-        app:cnb_iconColor="@color/ThirdFragmentColor"
         android:icon="@drawable/ic_calculate_black_24dp"
         android:title="@string/action_info_crypto" />
 
     <item
         android:id="@+id/action_settings"
-        app:cnb_iconColor="@color/QuarterFragmentColor"
         android:icon="@drawable/ic_settings_black_24dp"
         android:title="@string/action_settings" />
 </menu>

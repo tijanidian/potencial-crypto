@@ -40,13 +40,24 @@ class MainActivity : AppCompatActivity() {
 
     private fun setupMenuButtonListener() {
         binding.bottomNavigationView.setOnItemSelectedListener {
-            when (it) {
-                R.id.action_crypto -> showFragment(CryptoCurrencyFragment.createInstance())
-                R.id.action_potential_crypto ->        showFragment(CryptoPotentialFragment.createInstance())
-                R.id.action_settings ->    showFragment(SettingsFragment.createInstance())
-
-                R.id.action_info_crypto -> showFragment(CryptoInformationFragment.createInstance())
-
+            when (it.itemId) {
+                R.id.action_crypto -> {
+                    showFragment(CryptoCurrencyFragment.createInstance())
+                    true
+                }
+                R.id.action_potential_crypto -> {
+                    showFragment(CryptoPotentialFragment.createInstance())
+                    true
+                }
+                R.id.action_info_crypto -> {
+                    showFragment(CryptoInformationFragment.createInstance())
+                    true
+                }
+                R.id.action_settings -> {
+                    showFragment(SettingsFragment.createInstance())
+                    true
+                }
+                else -> super.onOptionsItemSelected(it)
             }
         }
     }

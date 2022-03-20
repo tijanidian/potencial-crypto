@@ -43,20 +43,19 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <com.ismaeldivita.chipnavigation.ChipNavigationBar
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation_view"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="wrap_content"
         android:layout_gravity="bottom"
-        android:background="#FFF"
-        app:itemIconTint="@color/black"
-        app:itemTextColor="@color/black"
+        android:background="@drawable/round_corner"
+        android:elevation="2dp"
+        android:layout_margin="7dp"
         app:labelVisibilityMode="labeled"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:cnb_menuResource="@menu/navegation_menu"
-         />
-
+        app:menu="@menu/navegation_menu" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
