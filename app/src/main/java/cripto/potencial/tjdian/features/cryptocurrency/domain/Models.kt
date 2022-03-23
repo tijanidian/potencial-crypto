@@ -1,28 +1,38 @@
 package cripto.potencial.tjdian.features.cryptocurrency.domain
 
+import cripto.potencial.tjdian.features.cryptocurrency.data.remote.detailremoteapimodel.Description
+import cripto.potencial.tjdian.features.cryptocurrency.data.remote.detailremoteapimodel.Image
+import cripto.potencial.tjdian.features.cryptocurrency.data.remote.detailremoteapimodel.Links
+import cripto.potencial.tjdian.features.cryptocurrency.data.remote.detailremoteapimodel.MarketData
 import cripto.potencial.tjdian.features.cryptocurrency.data.remote.remoteapimodel.CurrentPrice
-import cripto.potencial.tjdian.features.cryptocurrency.data.remote.remoteapimodel.Image
 import cripto.potencial.tjdian.features.cryptocurrency.data.remote.remoteapimodel.MarketCap
 
-data class CoinModel(
-    val block_time_in_minutes: Any?,
+data class CoinDetailModel(
+    val block_time_in_minutes: Int,
+    val categories: List<String>,
+    val country_origin: String,
+    val description: Description,
+    val genesis_date: Any?,
+    val hashing_algorithm: String?,
     val id: String,
     val image: Image,
     val last_updated: String,
-    val market_data: MarketDataModel,
+    val links: Links,
+    val market_data: MarketData,
     val name: String,
+    val public_interest_score: Double,
     val symbol: String
 )
 
 
-data class CurrentPriceModel(
-    val eur: Int,
-    val usd: Int,
-)
-
-data class High24hModel(
-    val eur: Int,
-    val usd: Int,
+data class CoinModel(
+    val block_time_in_minutes: Any?,
+    val id: String,
+    val image: ImageModel,
+    val last_updated: String,
+    val market_data: MarketDataModel,
+    val name: String,
+    val symbol: String
 )
 
 data class ImageModel(
@@ -31,82 +41,18 @@ data class ImageModel(
     val thumb: String
 )
 
-data class Low24hModel(
-    val eur: Int,
-    val usd: Int,
-)
-
-data class MarketCapModel(
-    val eur: Int,
-    val usd: Int,
-)
-
-data class MarketCapChange24hInCurrencyModel(
-    val eur: Int,
-    val usd: Int,
-
-    )
-
-data class MarketCapChangePercentage24hInCurrencyModel(
-    val eur: Int,
-    val usd: Int,
-)
-
 data class MarketDataModel(
     val current_price: CurrentPrice,
-    val market_cap:MarketCap,
-    val total_supply:String?
+    val market_cap: MarketCap,
+    val total_supply: String?
 
 )
 
-data class PriceChange24hInCurrencyModel(
-    val eur: Int,
-    val usd: Int,
-)
-
-data class PriceChangePercentage1hInCurrencyModel(
-    val eur: Int,
-    val usd: Int,
-)
-
-data class PriceChangePercentage7dInCurrencyModel(
-    val eur: Int,
-    val usd: Int,
-)
-
-data class PriceChangePercentage14dInCurrencyModel(
-    val eur: Int,
-    val usd: Int,
-)
 
 
-data class PriceChangePercentage24hInCurrencyModel(
-    val eur: Int,
-    val usd: Int,
-)
-
-data class PriceChangePercentage30dInCurrencyModel(
-    val eur: Int,
-    val usd: Int,
-)
-
-data class PriceChangePercentage60dInCurrencyModel(
-    val eur: Int,
-    val usd: Int,
-)
 
 
-data class PriceChangePercentage200dInCurrencyModel(
-    val eur: Int,
-    val usd: Int,
-)
 
-data class TotalVolumeModel(
-    val eur: Int,
-    val usd: Int,
-)
 
-data class PriceChangePercentage1yInCurrencyModel(
-    val eur: Int,
-    val usd: Int,
-)
+
+
