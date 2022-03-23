@@ -1,5 +1,7 @@
 package cripto.potencial.tjdian.features.cryptocurrency.data.remote
 
+import android.util.Log
+import cripto.potencial.tjdian.app.domain.ErrorApp
 import cripto.potencial.tjdian.features.cryptocurrency.data.remote.remoteapimodel.CryptoApiModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
@@ -16,7 +18,7 @@ class CryptoApiClient @Inject constructor(private val cryptoApiEndPoint: CryptoA
                 Result.success(mutableListOf())
             }
         } catch (ex: Exception) {
-            Result.failure(ex)
+            Result.failure(ErrorApp.ServerError)
         }
     }
 }

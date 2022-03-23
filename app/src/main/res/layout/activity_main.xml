@@ -33,7 +33,7 @@
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
-    <cripto.potencial.tjdian.features.cryptocurrency.app.presentation.LoadingView
+    <cripto.potencial.tjdian.app.presentation.LoadingView
         android:id="@+id/view_progress_indicator"
         android:layout_width="0dp"
         android:layout_height="0dp"

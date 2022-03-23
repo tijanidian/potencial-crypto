@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import cripto.potencial.tjdian.features.cryptocurrency.app.presentation.UiState
+import cripto.potencial.tjdian.app.presentation.UiState
 import cripto.potencial.tjdian.features.cryptocurrency.domain.CoinModel
 import cripto.potencial.tjdian.features.cryptocurrency.domain.GetCoinsUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
