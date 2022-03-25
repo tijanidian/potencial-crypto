@@ -31,8 +31,6 @@ class CryptoViewHolder(val view: View) : RecyclerView.ViewHolder(view) {
             )
         }
 
-
-
         if (coinModel.market_data.total_supply==null){
             binding.labelCryptoTotalSupply.text= view.context.getString(R.string.empty_supply)
         }

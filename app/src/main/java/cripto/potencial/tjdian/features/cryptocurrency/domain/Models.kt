@@ -21,7 +21,7 @@ data class CoinDetailModel(
     val market_data: MarketData,
     val name: String,
     val public_interest_score: Double,
-    val symbol: String
+    val symbol: String,
 )
 
 

@@ -40,7 +40,7 @@ data class MarketData(
     val price_change_percentage_7d: Double,
     val price_change_percentage_7d_in_currency: PriceChangePercentage7dInCurrency,
     val roi: Any,
-    val total_supply: Double,
+    val total_supply: String,
     val total_value_locked: Any,
     val total_volume: TotalVolume
 )

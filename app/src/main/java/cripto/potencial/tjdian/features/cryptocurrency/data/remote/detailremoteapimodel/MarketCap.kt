@@ -21,7 +21,7 @@ data class MarketCap(
     val dot: Float,
     val eos: Float,
     val eth: Double,
-    val eur: Float,
+    val eur: Long,
     val gbp: Float,
     val hkd: Float,
     val huf: Float,

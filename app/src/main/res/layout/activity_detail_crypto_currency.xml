@@ -1,29 +1,277 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".features.cryptocurrency.presentation.DetailCryptoCurrencyActivity">
 
-
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/label_crypto_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text=""
-        android:textSize="45sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <cripto.potencial.tjdian.app.presentation.LoadingView
-        android:id="@+id/view_progress_indicator"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/label_crypto_image"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/ic_launcher_background"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/custom_toolbar" />
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/group_chip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/label_crypto_image"
+            app:layout_constraintTop_toBottomOf="@+id/custom_toolbar">
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/label_crypto_rank"
+                style="@style/CustomChip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="rank"
+                app:layout_constraintStart_toEndOf="@+id/label_crypto_image"
+                app:layout_constraintTop_toBottomOf="@+id/custom_toolbar" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/label_crypto_name"
+                style="@style/CustomChip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="name"
+                app:layout_constraintStart_toEndOf="@+id/label_crypto_rank"
+                app:layout_constraintTop_toBottomOf="@+id/custom_toolbar" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/label_crypto_symbol"
+                style="@style/CustomChip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="BTC"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/label_crypto_name"
+                app:layout_constraintTop_toBottomOf="@+id/custom_toolbar" />
+
+        </com.google.android.material.chip.ChipGroup>
+
+        <View
+            android:id="@+id/line_separating_top"
+            style="@style/LineSection"
+            android:layout_width="0dp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/label_crypto_image" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/label_crypto_info_title"
+            style="@style/Subtitle1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:textSize="20sp"
+            android:text="Informacion Crypto"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/line_separating_top" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/image_crypto_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/ic_sell"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/label_crypto_info_title" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/label_crypto_price_eur"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="20dp"
+            android:text="Precio: 1234 €"
+            android:textAlignment="center"
+            app:layout_constraintStart_toEndOf="@+id/image_crypto_price"
+            app:layout_constraintTop_toBottomOf="@+id/label_crypto_info_title" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/image_crypto_supply"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/ic_power"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/label_crypto_price_eur" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/label_total_supply"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="20dp"
+            android:text="Supply: 15451551.0"
+            app:layout_constraintStart_toEndOf="@+id/image_crypto_supply"
+            app:layout_constraintTop_toBottomOf="@+id/label_crypto_price_eur" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/image_crypto_market_cap"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/ic_store"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/label_total_supply" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/label_market_cap"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="20dp"
+            android:text="Market cap: 154151514"
+            app:layout_constraintStart_toEndOf="@+id/image_crypto_market_cap"
+            app:layout_constraintTop_toBottomOf="@+id/label_total_supply" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/image_crypto_country"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/ic_flag"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/label_market_cap" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/label_country_origin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="20dp"
+            android:text="Japan"
+            app:layout_constraintStart_toEndOf="@+id/image_crypto_country"
+            app:layout_constraintTop_toBottomOf="@+id/label_market_cap" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/image_crypto_hashing_algorithm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/ic_tag_hashing"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/label_country_origin" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/label_hashing_algorithm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="20dp"
+            android:text="Hash: HDFSDFSDFs"
+            app:layout_constraintStart_toEndOf="@+id/image_crypto_hashing_algorithm"
+            app:layout_constraintTop_toBottomOf="@+id/label_country_origin" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/image_crypto_block_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/ic_time"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/label_hashing_algorithm" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/label_block_time_in_minutes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="20dp"
+            android:text="Tiempo añadir bloque: 10 min"
+            app:layout_constraintStart_toEndOf="@+id/image_crypto_block_time"
+            app:layout_constraintTop_toBottomOf="@+id/label_hashing_algorithm" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/title_public_interest_score"
+            style="@style/Subtitle1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:textSize="20sp"
+            android:text="Intereses medio sobre BTC"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/label_block_time_in_minutes" />
+
+        <androidx.appcompat.widget.AppCompatRatingBar
+            android:id="@+id/public_interest_score"
+            style="@style/RatingBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:isIndicator="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/title_public_interest_score" />
+
+        <View
+            android:id="@+id/line_separating_description"
+            style="@style/LineSection"
+            android:layout_width="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/public_interest_score" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/label_crypto_title_description"
+            style="@style/Subtitle1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Descripción"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/line_separating_description" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/label_current_descreption"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="Precio"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/label_crypto_title_description" />
+
+        <include
+            android:id="@+id/custom_toolbar"
+            layout="@layout/view_custom_toolbar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <cripto.potencial.tjdian.app.presentation.LoadingView
+            android:id="@+id/view_progress_indicator"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
