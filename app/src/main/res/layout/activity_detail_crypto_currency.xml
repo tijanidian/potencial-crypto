@@ -75,8 +75,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:textSize="20sp"
             android:text="Informacion Crypto"
+            android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/line_separating_top" />
@@ -93,12 +93,14 @@
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/label_crypto_price_eur"
+            style="@style/Body1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginTop="20dp"
             android:text="Precio: 1234 €"
             android:textAlignment="center"
+            android:textIsSelectable="true"
             app:layout_constraintStart_toEndOf="@+id/image_crypto_price"
             app:layout_constraintTop_toBottomOf="@+id/label_crypto_info_title" />
 
@@ -114,11 +116,13 @@
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/label_total_supply"
+            style="@style/Body1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginTop="20dp"
             android:text="Supply: 15451551.0"
+            android:textIsSelectable="true"
             app:layout_constraintStart_toEndOf="@+id/image_crypto_supply"
             app:layout_constraintTop_toBottomOf="@+id/label_crypto_price_eur" />
 
@@ -134,11 +138,13 @@
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/label_market_cap"
+            style="@style/Body1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginTop="20dp"
             android:text="Market cap: 154151514"
+            android:textIsSelectable="true"
             app:layout_constraintStart_toEndOf="@+id/image_crypto_market_cap"
             app:layout_constraintTop_toBottomOf="@+id/label_total_supply" />
 
@@ -154,11 +160,13 @@
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/label_country_origin"
+            style="@style/Body1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginTop="20dp"
             android:text="Japan"
+            android:textIsSelectable="true"
             app:layout_constraintStart_toEndOf="@+id/image_crypto_country"
             app:layout_constraintTop_toBottomOf="@+id/label_market_cap" />
 
@@ -174,11 +182,13 @@
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/label_hashing_algorithm"
+            style="@style/Body1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginTop="20dp"
             android:text="Hash: HDFSDFSDFs"
+            android:textIsSelectable="true"
             app:layout_constraintStart_toEndOf="@+id/image_crypto_hashing_algorithm"
             app:layout_constraintTop_toBottomOf="@+id/label_country_origin" />
 
@@ -194,6 +204,7 @@
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/label_block_time_in_minutes"
+            style="@style/Body1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
@@ -208,8 +219,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:textSize="20sp"
             android:text="Intereses medio sobre BTC"
+            android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/label_block_time_in_minutes" />
@@ -251,6 +262,7 @@
             android:layout_height="wrap_content"
             android:padding="10dp"
             android:text="Precio"
+            style="@style/TextAppearance.MaterialComponents.Body2"
             android:textAlignment="center"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

@@ -1,23 +1,17 @@
 package cripto.potencial.tjdian.features.cryptocurrency.presentation
 
-import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.text.Html.FROM_HTML_MODE_LEGACY
+import android.text.method.LinkMovementMethod
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.text.HtmlCompat
-import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import cripto.potencial.tjdian.R
 import cripto.potencial.tjdian.app.extensions.loadUrl
 import cripto.potencial.tjdian.databinding.ActivityDetailCryptoCurrencyBinding
-import cripto.potencial.tjdian.features.cryptoinformation.presentation.CryptoInformationFragment
-import cripto.potencial.tjdian.features.cryptopotential.presentation.CryptoPotentialFragment
-import cripto.potencial.tjdian.features.settings.presentation.SettingsFragment
 import dagger.hilt.android.AndroidEntryPoint
-import okhttp3.internal.delimiterOffset
 
 @AndroidEntryPoint
 class DetailCryptoCurrencyActivity : AppCompatActivity() {
@@ -57,40 +51,77 @@ class DetailCryptoCurrencyActivity : AppCompatActivity() {
         viewModel.coinViewState.observe(this, nameObserver)
     }
 
-    private fun render(coin: CryptoDetailViewState) {
+    private fun render(coinModel: CryptoDetailViewState) {
         hideLoading()
-        renderText(coin)
+        renderText(coinModel)
+        renderImage(coinModel)
+        renderLink(coinModel)
+        renderRatingBar(coinModel)
+    }
+
+    private fun renderText(coinModel: CryptoDetailViewState) {
+        binding.labelCryptoName.text = coinModel.name
+        binding.labelCryptoSymbol.text = coinModel.symbol
+
+        binding.labelMarketCap.text =
+            getString(R.string.market_cap_detail, coinModel.market_data.market_cap.eur.toString())
+        binding.labelCryptoPriceEur.text = getString(
+            R.string.crypto_price_detail,
+            coinModel.market_data.current_price.eur.toString()
+        )
+        binding.labelTotalSupply.text =
+            getString(R.string.total_supply_detail, coinModel.market_data.total_supply)
+        binding.labelCryptoRank.text =
+            getString(R.string.empty_rank_detail, coinModel.market_data.market_cap_rank.toString())
+
+        binding.labelCountryOrigin.text = getString(R.string.country_name, coinModel.country_origin)
+        binding.labelHashingAlgorithm.text =
+            getString(R.string.type_hash_name_coin, coinModel.hashing_algorithm)
+        binding.labelBlockTimeInMinutes.text =
+            getString(R.string.time_block, coinModel.block_time_in_minutes.toString())
+
+
+        //Titles
+        binding.labelCryptoInfoTitle.text = getString(R.string.title_name_coin, coinModel.name)
+        binding.labelCryptoInfoTitle.text =
+            getString(R.string.title_public_interest_score, coinModel.name)
+        binding.labelCryptoTitleDescription.text =
+            getString(R.string.title_description_coin, coinModel.name)
+
+
+
+        when {
+            coinModel.market_data.total_supply == "" -> binding.labelTotalSupply.text =
+                getString(R.string.empty_info)
+            coinModel.description.en=="" -> binding.labelCurrentDescreption.text =
+                getString(R.string.empty_info)
+            coinModel.country_origin == "" -> binding.labelCountryOrigin.text =
+                getString(R.string.empty_info)
+        }
 
     }
 
-    @SuppressLint("WrongConstant")
-    private fun renderText(coin: CryptoDetailViewState) {
-        binding.labelCryptoName.text = coin.name
-        binding.labelCryptoSymbol.text=coin.symbol
-        binding.labelCurrentDescreption.text=HtmlCompat.fromHtml(coin.description.en,FROM_HTML_MODE_LEGACY)
-        binding.labelCryptoImage.loadUrl(coin.image.large)
+    private fun renderImage(coinModel: CryptoDetailViewState) {
+        binding.labelCryptoImage.loadUrl(coinModel.image.large)
+    }
 
-        binding.labelMarketCap.text=getString(R.string.market_cap_detail, coin.market_data.market_cap.eur.toString())
-        binding.labelCryptoPriceEur.text=getString(R.string.crypto_price_detail, coin.market_data.current_price.eur.toString())
-        binding.labelTotalSupply.text= getString(R.string.total_supply_detail, coin.market_data.total_supply)
-        binding.labelCryptoRank.text=  getString(R.string.empty_rank_detail, coin.market_data.market_cap_rank.toString())
+    private fun renderLink(coinModel: CryptoDetailViewState) {
 
-        binding.labelCryptoInfoTitle.text= getString(R.string.title_name_coin, coin.name)
-        binding.labelCryptoInfoTitle.text= getString(R.string.title_public_interest_score, coin.name)
-        binding.labelCryptoTitleDescription.text= getString(R.string.title_description_coin, coin.name)
+        binding.labelCryptoTitleDescription.movementMethod = LinkMovementMethod.getInstance()
+        binding.labelCurrentDescreption.text = HtmlCompat.fromHtml(
+            coinModel.description.en,
+            HtmlCompat.FROM_HTML_MODE_LEGACY
+        )
+    }
 
-        if(coin.market_data.total_supply==null){
-            binding.labelTotalSupply.text=getString(R.string.empty_supply)
-        }
-
-        binding.publicInterestScore.rating= coin.public_interest_score.toFloat()
-
-
+    private fun renderRatingBar(coinModel: CryptoDetailViewState) {
+        binding.publicInterestScore.rating = coinModel.public_interest_score.toFloat()
     }
 
     private fun showLoading() {
-       binding.viewProgressIndicator.show()
+        binding.viewProgressIndicator.show()
     }
+
     private fun hideLoading() {
         binding.viewProgressIndicator.hide()
     }
