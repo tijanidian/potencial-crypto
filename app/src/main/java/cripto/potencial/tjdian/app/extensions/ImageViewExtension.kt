@@ -1,4 +1,4 @@
-package cripto.potencial.tjdian.features.cryptocurrency.app.extensions
+package cripto.potencial.tjdian.app.extensions
 
 import android.widget.ImageView
 import com.bumptech.glide.Glide

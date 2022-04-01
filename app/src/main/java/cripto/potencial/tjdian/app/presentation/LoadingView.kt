@@ -1,4 +1,4 @@
-package cripto.potencial.tjdian.features.cryptocurrency.app.presentation
+package cripto.potencial.tjdian.app.presentation
 
 import android.content.Context
 import android.util.AttributeSet
