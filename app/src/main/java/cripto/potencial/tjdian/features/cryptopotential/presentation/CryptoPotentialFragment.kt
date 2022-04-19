@@ -20,10 +20,47 @@ class CryptoPotentialFragment @Inject constructor() : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentPotentialCryptoBinding.inflate(inflater, container, false)
+        calculatePotentialCoin()
+        resetPotentialCoin()
         return binding.root
+
     }
 
-    companion object{
-        fun createInstance()= CryptoPotentialFragment()
+
+    //Dividimos market cap entre su max supply y colocamos las monedas para calcular
+    private fun calculatePotentialCoin() {
+        binding.labelResult.text = "Rellena todos los campos"
+
+
+        val marketCap = binding.editMarketCap.inputType
+        val totalSupply = binding.editTotalSupplu.inputType
+        var coins = binding.editCoins.inputType
+
+        if (marketCap==null || totalSupply==null|| coins==null) {
+            binding.labelResult.text = "Rellena todos los campos"
+        } else {
+
+            binding.actionCalculatePotential.setOnClickListener {
+                var result=(marketCap/totalSupply)*coins
+                binding.labelResult.text= result.toString()
+            }
+        }
+
     }
+
+    private fun resetPotentialCoin() {
+        binding.actionResetPotential.setOnClickListener {
+            binding.editMarketCap.setText("")
+            binding.editTotalSupplu.setText("")
+            binding.editCoins.setText("")
+        }
+    }
+
+
+    companion object {
+        fun createInstance() = CryptoPotentialFragment()
+    }
+
 }
+
+
