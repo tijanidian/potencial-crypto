@@ -4,15 +4,18 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import cripto.potencial.tjdian.databinding.FragmentPotentialCryptoBinding
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
+import kotlin.math.roundToInt
 
 @AndroidEntryPoint
 class CryptoPotentialFragment @Inject constructor() : Fragment() {
 
     private lateinit var binding: FragmentPotentialCryptoBinding
+
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -42,7 +45,7 @@ class CryptoPotentialFragment @Inject constructor() : Fragment() {
 
             binding.actionCalculatePotential.setOnClickListener {
                 var result=(marketCap/totalSupply)*coins
-                binding.labelResult.text= result.toString()
+                binding.labelResult.text= "${result} $"
             }
         }
 
@@ -53,6 +56,7 @@ class CryptoPotentialFragment @Inject constructor() : Fragment() {
             binding.editMarketCap.setText("")
             binding.editTotalSupplu.setText("")
             binding.editCoins.setText("")
+            binding.labelResult.text = ""
         }
     }
 
@@ -60,6 +64,7 @@ class CryptoPotentialFragment @Inject constructor() : Fragment() {
     companion object {
         fun createInstance() = CryptoPotentialFragment()
     }
+
 
 }
 
