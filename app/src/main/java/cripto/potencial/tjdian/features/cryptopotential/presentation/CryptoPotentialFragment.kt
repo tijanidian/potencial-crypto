@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import cripto.potencial.tjdian.databinding.FragmentPotentialCryptoBinding
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
+import kotlin.math.roundToInt
 
 @AndroidEntryPoint
 class CryptoPotentialFragment @Inject constructor() : Fragment() {
@@ -20,7 +21,7 @@ class CryptoPotentialFragment @Inject constructor() : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentPotentialCryptoBinding.inflate(inflater, container, false)
-        calculatePotentialCoin()
+        calculatePotentialCoin2()
         resetPotentialCoin()
         return binding.root
 
@@ -34,17 +35,37 @@ class CryptoPotentialFragment @Inject constructor() : Fragment() {
 
         val marketCap = binding.editMarketCap.inputType
         val totalSupply = binding.editTotalSupplu.inputType
-        var coins = binding.editCoins.inputType
+        val coins = binding.editCoins.inputType
 
         if (marketCap==null || totalSupply==null|| coins==null) {
             binding.labelResult.text = "Rellena todos los campos"
         } else {
 
             binding.actionCalculatePotential.setOnClickListener {
-                var result=(marketCap/totalSupply)*coins
+                val result=(marketCap/totalSupply)*coins
                 binding.labelResult.text= "${result} $"
             }
         }
+
+    }
+
+    private fun calculatePotentialCoin2() {
+
+
+
+            binding.actionCalculatePotential.setOnClickListener {
+                val value1= binding.editMarketCap.text.toString().toDouble()
+                val value2= binding.editTotalSupplu.text.toString().toDouble()
+                val value3 = binding.editCoins.text.toString().toDouble()
+
+
+                val calculatedValue = value1 / value2 * value3
+                val roundoff = (calculatedValue * 100.0).roundToInt() / 100.0
+                binding.labelResult.text = roundoff.toString()
+
+
+        }
+
 
     }
 
@@ -53,6 +74,7 @@ class CryptoPotentialFragment @Inject constructor() : Fragment() {
             binding.editMarketCap.setText("")
             binding.editTotalSupplu.setText("")
             binding.editCoins.setText("")
+            binding.labelResult.text=""
         }
     }
 
