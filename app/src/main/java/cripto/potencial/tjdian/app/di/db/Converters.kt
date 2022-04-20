@@ -6,7 +6,7 @@ import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import cripto.potencial.tjdian.features.cryptocurrency.data.local.db.entities.CoinMarketDataLocalModel
 import cripto.potencial.tjdian.features.cryptocurrency.domain.CoinModel
-import cripto.potencial.tjdian.features.cryptocurrency.domain.CurrentPriceModel
+
 
 @ProvidedTypeConverter
 class Converters {
