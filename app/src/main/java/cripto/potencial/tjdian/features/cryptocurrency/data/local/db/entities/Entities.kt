@@ -9,7 +9,7 @@ import cripto.potencial.tjdian.features.cryptocurrency.domain.*
 @Entity(tableName = "coins")
 data class CoinEntity(
     @PrimaryKey @ColumnInfo(name = "id") val coinId: String,
-    @ColumnInfo(name = "block_time_in_minutes") val blockTime: Long?,
+    @ColumnInfo(name = "block_time_in_minutes") val blockTime: String?,
     @ColumnInfo(name = "last_updated") val lastUpdate: String,
     @ColumnInfo(name = "name") val nameCoin: String,
     @ColumnInfo(name = "symbol") val symbolCoin: String,

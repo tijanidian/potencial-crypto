@@ -11,5 +11,5 @@ data class CryptoApiModel(
     val name: String,
     val symbol: String
 ){
-    fun toModel():CoinModel= CoinModel(block_time_in_minutes.toLong(),id,image.toModel(),last_updated,market_data.toModel(),name, symbol)
+    fun toModel():CoinModel= CoinModel(block_time_in_minutes,id,image.toModel(),last_updated,market_data.toModel(),name, symbol)
 }

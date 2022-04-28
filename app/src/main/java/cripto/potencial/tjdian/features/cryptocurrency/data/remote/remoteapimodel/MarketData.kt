@@ -34,9 +34,5 @@ data class MarketData(
     val total_supply: String?,
     val total_volume: TotalVolume
 ){
-    fun toModel():MarketDataModel=MarketDataModel(
-        current_price.toModel(),
-        market_cap,
-        total_supply
-    )
+    fun toModel():MarketDataModel= MarketDataModel(current_price.toModel(),market_cap.toModel(),total_supply)
 }

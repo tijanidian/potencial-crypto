@@ -64,8 +64,7 @@ data class CurrentPrice(
     val xrp: Float,
     val yfi: Double,
     val zar: Any?
-){
-    fun toModel():CurrentPriceModel=CurrentPriceModel(){
 
-    }
+){
+    fun toModel():CurrentPriceModel=CurrentPriceModel(eur, usd)
 }
