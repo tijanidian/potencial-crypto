@@ -58,9 +58,9 @@ data class ImageLocalModel(
 }
 
 data class CoinMarketDataLocalModel(
-    val current_price: CurrentPriceModel?,
+    val current_price: CurrentPriceModel? = null,
     val market_cap: MarketCapModel,
-    val total_supply: String?
+    val total_supply: String? = null
 ) {
     fun toModel() = MarketDataModel(
         current_price, market_cap, total_supply

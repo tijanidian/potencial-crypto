@@ -1,6 +1,8 @@
-package cripto.potencial.tjdian.app.di
+package cripto.potencial.tjdian.features.cryptocurrency.di
 
 import cripto.potencial.tjdian.features.cryptocurrency.data.CryptoDataRepository
+import cripto.potencial.tjdian.features.cryptocurrency.data.local.CryptoLocalSource
+import cripto.potencial.tjdian.features.cryptocurrency.data.local.db.CryptoDbLocalSource
 import cripto.potencial.tjdian.features.cryptocurrency.data.remote.CryptoRemoteSource
 import cripto.potencial.tjdian.features.cryptocurrency.data.remote.RemoteDataSource
 import cripto.potencial.tjdian.features.cryptocurrency.domain.CryptoRepository
@@ -19,4 +21,7 @@ abstract class CryptoModule {
 
     @Binds
     abstract fun bindCryptoRemoteSource(remoteSource: CryptoRemoteSource): RemoteDataSource
+
+    @Binds
+    abstract fun bindCryptoLocalSource(remoteSource: CryptoDbLocalSource): CryptoLocalSource
 }
