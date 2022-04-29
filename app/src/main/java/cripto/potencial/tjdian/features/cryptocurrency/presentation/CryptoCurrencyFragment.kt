@@ -7,10 +7,10 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
-import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
+import cripto.potencial.tjdian.R
 import cripto.potencial.tjdian.databinding.FragmentCurrencyCryptoBinding
-import cripto.potencial.tjdian.features.cryptocurrency.app.presentation.UiState
+import cripto.potencial.tjdian.app.presentation.UiState
 import cripto.potencial.tjdian.features.cryptocurrency.domain.CoinModel
 import cripto.potencial.tjdian.features.cryptocurrency.presentation.adapter.CryptoAdapter
 import cripto.potencial.tjdian.features.main.presentation.MainActivity
@@ -24,7 +24,7 @@ class CryptoCurrencyFragment @Inject constructor() : Fragment() {
     private val viewModelCrypto: CryptoCurrencyViewModel by viewModels()
 
     @Inject
-    lateinit var eventAdapter: CryptoAdapter
+    lateinit var cryptoAdapter: CryptoAdapter
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -41,7 +41,7 @@ class CryptoCurrencyFragment @Inject constructor() : Fragment() {
         viewModelCrypto.loadCoins()
     }
     private fun setupView() {
-        binding.coinList.adapter = eventAdapter
+        binding.coinList.adapter = cryptoAdapter
         binding.coinList.layoutManager =
             LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
     }
@@ -49,20 +49,20 @@ class CryptoCurrencyFragment @Inject constructor() : Fragment() {
         val observer = Observer<UiState<List<CoinModel>>> {
             when (it) {
                 is UiState.Loading -> showLoading()
-                is UiState.Success -> loadEvents(it.data)
-                is UiState.Error -> showEventError()
+                is UiState.Success -> loadCoins(it.data)
+                is UiState.Error -> showCryptoError()
             }
         }
-        viewModelCrypto.eventUIState.observe(this.viewLifecycleOwner, observer)
+        viewModelCrypto.coinViewState.observe(this.viewLifecycleOwner, observer)
     }
     private fun showLoading() {
         (requireActivity() as MainActivity).showLoadingProgress()
     }
-    private fun loadEvents(events: List<CoinModel>) {
+    private fun loadCoins(coins: List<CoinModel>) {
         hideLoading()
-        eventAdapter.submitList(events)
+        cryptoAdapter.submitList(coins)
     }
-    private fun showEventError() {
+    private fun showCryptoError() {
 
     }
     private fun hideLoading() {

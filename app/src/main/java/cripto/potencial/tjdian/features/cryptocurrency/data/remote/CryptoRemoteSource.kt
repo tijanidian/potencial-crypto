@@ -1,5 +1,7 @@
 package cripto.potencial.tjdian.features.cryptocurrency.data.remote
 
+import cripto.potencial.tjdian.app.domain.ErrorApp
+import cripto.potencial.tjdian.features.cryptocurrency.domain.CoinDetailModel
 import cripto.potencial.tjdian.features.cryptocurrency.domain.CoinModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
@@ -22,8 +24,14 @@ class CryptoRemoteSource @Inject constructor(private val cryptoApiClient: Crypto
             Result.success(coinsModel)
 
         } catch (ex: Exception) {
-            Result.failure(ex)
+            Result.failure(ErrorApp.ServerError)
         }
 
     }
+
+    override suspend fun getCoin(coinId: String): CoinDetailModel? = withContext(Dispatchers.IO) {
+         cryptoApiClient.getCoin(coinId)?.toModel()
+    }
+
+
 }

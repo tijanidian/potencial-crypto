@@ -1,4 +1,4 @@
-package cripto.potencial.tjdian.features.cryptocurrency.app.di
+package cripto.potencial.tjdian.app.di
 
 import cripto.potencial.tjdian.features.cryptocurrency.data.CryptoDataRepository
 import cripto.potencial.tjdian.features.cryptocurrency.data.remote.CryptoRemoteSource

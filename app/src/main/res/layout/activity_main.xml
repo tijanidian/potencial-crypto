@@ -33,7 +33,7 @@
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
-    <cripto.potencial.tjdian.features.cryptocurrency.app.presentation.LoadingView
+    <cripto.potencial.tjdian.app.presentation.LoadingView
         android:id="@+id/view_progress_indicator"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -43,18 +43,19 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
+
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation_view"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="wrap_content"
         android:layout_gravity="bottom"
-        android:background="@color/white"
-        app:itemIconTint="@color/black"
-        app:itemTextColor="@color/black"
+        android:background="@drawable/round_corner"
+        android:elevation="2dp"
+        android:layout_margin="7dp"
         app:labelVisibilityMode="labeled"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:menu="@menu/home_menu" />
+        app:menu="@menu/navegation_menu" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

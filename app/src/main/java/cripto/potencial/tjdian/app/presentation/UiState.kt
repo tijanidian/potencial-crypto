@@ -1,4 +1,4 @@
-package cripto.potencial.tjdian.features.cryptocurrency.app.presentation
+package cripto.potencial.tjdian.app.presentation
 
 sealed class UiState<out T> where T : Any? {
     object Loading : UiState<Nothing>()
