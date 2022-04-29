@@ -31,13 +31,12 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setUpView() {
-        setupToolbar()
         setupMenuButtonListener()
     }
 
-    private fun setupToolbar() {
+    private fun setupToolbar(title: String) {
         setSupportActionBar(binding.customToolbar.mainBar)
-        supportActionBar?.title = getString(R.string.action_crypto)
+        setTitleToolbar(title)
     }
 
     private fun setupMenuButtonListener() {
@@ -45,23 +44,30 @@ class MainActivity : AppCompatActivity() {
             when (it.itemId) {
                 R.id.action_crypto -> {
                     showFragment(CryptoCurrencyFragment.createInstance())
+                    setupToolbar(getString(R.string.action_crypto))
                     true
                 }
                 R.id.action_potential_crypto -> {
                     showFragment(CryptoPotentialFragment.createInstance())
+                    setupToolbar(getString(R.string.action_potential_crypto))
                     true
                 }
                 R.id.action_info_crypto -> {
                     showFragment(CryptoInformationFragment.createInstance())
+                    setupToolbar(getString(R.string.action_info_crypto))
                     true
                 }
                 R.id.action_settings -> {
                     showFragment(SettingsFragment.createInstance())
+                    setupToolbar(getString(R.string.action_settings))
                     true
                 }
                 else -> super.onOptionsItemSelected(it)
             }
         }
+    }
+    fun setTitleToolbar(title: String) {
+        supportActionBar?.title = title
     }
 
     private fun showFragment(fragment: Fragment) {
@@ -72,6 +78,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun loadDefaultScreen() {
         showFragment(CryptoCurrencyFragment.createInstance())
+        setupToolbar(getString(R.string.action_crypto))
     }
 
     fun showLoadingProgress() = binding.viewProgressIndicator.show()

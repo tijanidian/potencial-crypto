@@ -1,5 +1,7 @@
 package cripto.potencial.tjdian.features.cryptocurrency.data.remote.remoteapimodel
 
+import cripto.potencial.tjdian.features.cryptocurrency.domain.MarketCapModel
+
 data class MarketCap(
     val aed: Long,
     val ars: Long,
@@ -62,4 +64,7 @@ data class MarketCap(
     val xrp: Long,
     val yfi: Int,
     val zar: Long
-)
+
+){
+    fun toModel():MarketCapModel=MarketCapModel(eur, usd)
+}
