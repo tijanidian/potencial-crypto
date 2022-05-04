@@ -4,8 +4,6 @@ import cripto.potencial.tjdian.features.cryptocurrency.data.remote.detailremotea
 import cripto.potencial.tjdian.features.cryptocurrency.data.remote.detailremoteapimodel.Image
 import cripto.potencial.tjdian.features.cryptocurrency.data.remote.detailremoteapimodel.Links
 import cripto.potencial.tjdian.features.cryptocurrency.data.remote.detailremoteapimodel.MarketData
-import cripto.potencial.tjdian.features.cryptocurrency.data.remote.remoteapimodel.CurrentPrice
-import cripto.potencial.tjdian.features.cryptocurrency.data.remote.remoteapimodel.MarketCap
 
 data class CoinDetailModel(
     val block_time_in_minutes: Int,
@@ -26,7 +24,7 @@ data class CoinDetailModel(
 
 
 data class CoinModel(
-    val block_time_in_minutes: Any?,
+    val block_time_in_minutes: String?,
     val id: String,
     val image: ImageModel,
     val last_updated: String,
@@ -42,10 +40,20 @@ data class ImageModel(
 )
 
 data class MarketDataModel(
-    val current_price: CurrentPrice,
-    val market_cap: MarketCap,
+    val current_price: CurrentPriceModel?,
+    val market_cap: MarketCapModel,
     val total_supply: String?
+)
 
+data class CurrentPriceModel(
+    val eur: Float,
+    val usd: Float,
+
+    )
+
+data class MarketCapModel(
+    val eur: Long,
+    val usd: Long,
 )
 
 

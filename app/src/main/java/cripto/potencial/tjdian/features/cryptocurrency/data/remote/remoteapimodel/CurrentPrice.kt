@@ -1,5 +1,7 @@
 package cripto.potencial.tjdian.features.cryptocurrency.data.remote.remoteapimodel
 
+import cripto.potencial.tjdian.features.cryptocurrency.domain.CurrentPriceModel
+
 data class CurrentPrice(
     val aed: Float,
     val ars: Float,
@@ -62,4 +64,7 @@ data class CurrentPrice(
     val xrp: Float,
     val yfi: Double,
     val zar: Any?
-)
+
+){
+    fun toModel():CurrentPriceModel=CurrentPriceModel(eur, usd)
+}
