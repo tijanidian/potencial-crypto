@@ -70,7 +70,7 @@ class MainActivity : AppCompatActivity() {
         supportActionBar?.title = title
     }
 
-    private fun showFragment(fragment: Fragment) {
+     fun showFragment(fragment: Fragment) {
         val fragmentTransition = supportFragmentManager.beginTransaction()
         fragmentTransition.replace(R.id.container_fragment, fragment)
         fragmentTransition.commit()
@@ -80,6 +80,7 @@ class MainActivity : AppCompatActivity() {
         showFragment(CryptoCurrencyFragment.createInstance())
         setupToolbar(getString(R.string.action_crypto))
     }
+
 
     fun showLoadingProgress() = binding.viewProgressIndicator.show()
 
@@ -99,4 +100,5 @@ class MainActivity : AppCompatActivity() {
             super.onBackPressed()
         }
     }
+
 }

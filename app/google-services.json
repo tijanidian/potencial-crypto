@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "953570789172",
+    "project_id": "potencial-crypto",
+    "storage_bucket": "potencial-crypto.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:953570789172:android:46f72c717e293a14398761",
+        "android_client_info": {
+          "package_name": "cripto.potencial.tjdian"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "953570789172-2e1g8opo63mufua7cvh58iio1be8tb65.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBS3tvLuMBKVQ5tV8h-EnZfkLSI6NeVouQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "953570789172-2e1g8opo63mufua7cvh58iio1be8tb65.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
