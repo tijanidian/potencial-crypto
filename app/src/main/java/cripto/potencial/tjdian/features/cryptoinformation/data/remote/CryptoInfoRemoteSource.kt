@@ -4,5 +4,5 @@ import cripto.potencial.tjdian.features.cryptoinformation.domain.DescriptionMode
 
 
 interface CryptoInfoRemoteSource {
-    suspend fun getDescription():Result<List< DescriptionModel>>
+    suspend fun getDescription():Result<List<DescriptionModel>>
 }
