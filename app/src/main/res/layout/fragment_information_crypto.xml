@@ -1,15 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:fillViewport="true"
     android:layout_height="match_parent">
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/action_info_crypto"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/main_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="¿Qué es una criptomoneda?"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/main_body"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:padding="10dp"
+            android:text="Las criptomonedas, también llamadas criptodivisas o criptoactivos, son un medio digital de intercambio. Cumple la función de una moneda, y de ahí que se las conozca con ese nombre. Sin embargo, es algo totalmente digital, que utiliza métodos criptográficos para asegurar sus transacciones financieras, controlar la creación de nuevas unidades y verificar la transferencia de activos. \n Por lo tanto, podemos considerarlas como una alternativa descentralizada a las monedas digitales. Con el término descentralizada nos referimos a que estas monedas no son controladas por un único servicio o empresa. Lo mismo pasa con las monedas convencionales, centralizadas y organizadas por entidades y bancos, por lo que son un método opuesto a ambas."
+            android:textAlignment="center"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/main_title" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/first_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="La primera criptomoneda"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/main_body" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/first_main"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="150dp"
+            android:padding="10dp"
+            android:text="La primera criptomoneda fue el Bitcoin creado por Satoshi Nakamoto, seudónimo que corresponde a una persona que nadie sabe exactamente quién es. Esta persona publicó en 2009 un artículo en el que describía un sistema de pagos P2P al que llamó Bitcoin. Al cabo de unos meses él mismo publicó la primera versión del software que permite gestionar la red de la moneda, y empieza a interactuar en foros con los primeros interesados. \n Todavía no se sabe realmente quién es esta persona, pero sí que se sabe que se ha convertido en una de las 20 personas más ricas del mundo. El Bitcoin y su tecnología han tenido tal impacto, que a lo largo de los años han ido llegando cada vez más alternativas, nuevas criptomonedas alternativas que han ido incrementando su valor con mayor o menor suerte. Desde entonces, como veremos un poco después, se han ido creando una gran cantidad de criptomonedas diferentes. "
+            android:textAlignment="center"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/first_title" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+</ScrollView>

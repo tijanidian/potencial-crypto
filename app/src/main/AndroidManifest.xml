@@ -13,9 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Potencialcrypto">
 
-        <activity android:exported="false"
+        <activity
             android:name=".features.login.presentation.LoginActivity"
-            >
+            android:exported="false">
             <intent-filter>
                 <action android:name=".features.login.presentation.LoginActivity" />
                 <category android:name="android.intent.category.DEFAULT" />
