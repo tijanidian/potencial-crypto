@@ -61,7 +61,7 @@ class LoginActivity : AppCompatActivity() {
                 "url_policy_privacity",
                 "url_policy_privacity"
             )
-            .setLogo(R.drawable.ic_calculate_black_24dp)
+            .setLogo(R.drawable.ic_currency_bitcoin_black_24dp)
             .build()
         signInLauncher.launch(signInIntent)
     }
@@ -78,9 +78,9 @@ class LoginActivity : AppCompatActivity() {
 
     private fun showAlert() {
         MaterialAlertDialogBuilder(this).apply {
-            setTitle("Error login")
-            setMessage("Error login")
-            setPositiveButton("Positivo") { dialog, _ ->
+            setTitle(R.string.error_login)
+            setMessage(R.string.alert_dialog_error_login)
+            setPositiveButton(R.string.alert_dialog_positive) { dialog, _ ->
                 dialog?.dismiss()
             }
         }.show()

@@ -71,4 +71,6 @@
     <style name="RatingBar" parent="Theme.AppCompat">
         <item name="android:progressTint">@color/primaryColor</item>
     </style>
+
+
 </resources>

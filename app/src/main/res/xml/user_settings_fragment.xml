@@ -3,14 +3,14 @@
 
     <Preference
         app:iconSpaceReserved="false"
-        app:key="key_close_session"
-        app:summary="summary_close_session"
-        app:title="text_sing_out" />
+        app:key="@string/key_close_session"
+        app:summary="@string/summary_close_session"
+        app:title="@string/text_sing_out" />
 
     <Preference
         app:iconSpaceReserved="false"
-        app:key="key_remove_account"
-        app:summary="summary_remove_account"
-        app:title="text_remove_account" />
+        app:key="@string/key_remove_account"
+        app:summary="@string/summary_remove_account"
+        app:title="@string/text_remove_account" />
 
 </PreferenceScreen>

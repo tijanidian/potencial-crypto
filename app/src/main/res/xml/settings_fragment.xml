@@ -15,15 +15,26 @@
             app:title="Usuario anónimo (sin registrar)" />
 
         <PreferenceScreen
+            android:icon="@drawable/ic_google"
             android:title="Login"
-            app:iconSpaceReserved="false"
-            android:summary="Login y gestion de usuario">
-            <intent android:action=".features.login.presentation.LoginActivity"/>
+            app:iconSpaceReserved="false">
+            <intent android:action=".features.login.presentation.LoginActivity" />
 
         </PreferenceScreen>
 
     </PreferenceCategory>
 
+    <PreferenceCategory
+        app:iconSpaceReserved="false"
+        app:title="Dark mode">
+
+    <SwitchPreferenceCompat
+        android:defaultValue="true"
+        android:icon="@drawable/ic_dark_mode"
+        android:key="key_dark_mode"
+        android:title="Dark mode"
+        app:defaultValue="false" />
+    </PreferenceCategory>
 
     <PreferenceCategory
         app:iconSpaceReserved="false"
@@ -47,21 +58,21 @@
         app:iconSpaceReserved="false"
         app:title="Aplicación">
 
-        <Preference
-            app:iconSpaceReserved="false"
-            app:key="key_policy_privacity"
-            app:summary="Pulse para ver la política de privacidad."
-            app:title="Política de privacidad">
-            <intent
-                android:action="android.intent.action.VIEW"
-                android:data="https://avilaentapas.sitehub.es/public/privacy_policy.html" />
-        </Preference>
+        <!--        <Preference
+                    app:iconSpaceReserved="false"
+                    app:key="key_policy_privacity"
+                    app:summary="Pulse para ver la política de privacidad."
+                    app:title="Política de privacidad">
+                    &lt;!&ndash;<intent
+                        android:action="android.intent.action.VIEW"
+                        android:data="https://www.google.es/" />&ndash;&gt;
+                </Preference>-->
 
         <Preference
             android:enabled="true"
             app:iconSpaceReserved="false"
             app:key="key_app_version"
-            app:summary="version_app"
+            app:summary="1.0"
             app:title="Versión instalada" />
 
 
