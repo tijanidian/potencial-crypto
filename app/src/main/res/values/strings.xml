@@ -39,4 +39,68 @@
     <string name="time_block">Tiempo medio al añadir bloque: %1$s min.</string>
 
 
+
+
+    <!--User strings-->
+    <string name="title_login">¡Participa en el concurso!</string>
+    <string name="description_login">Para poder votar las tapas y participar en el sorteo, debes registrarte con una cuenta de google</string>
+    <string name="end_description_login">El ganador del sorteo se comunicará a través del email de la cuenta de Google con la que te registres</string>
+    <string name="sing_out">Sesión cerrada</string>
+    <string name="removed_account">Cuenta eliminada</string>
+    <string name="alert_dialog_positive">Aceptar</string>
+
+
+    <string name="alert_dialog_error_login">Se ha producido un error al intentar registrarse en Ávila en Tapas</string>
+    <string name="example_email">(email desconocido)</string>
+    <string name="example_name_user">Usuario anónimo (sin registrarse)</string>
+
+    <string name="title_sing_out_app_are_you_sure">Cerrar sesión</string>
+    <string name="message_sing_out_app_are_you_sure">¿Estas seguro/a que deseas salir de la aplicación?</string>
+    <string name="title_remove_account_app_are_you_sure">Eliminar cuenta</string>
+    <string name="message_remove_account_out_app_are_you_sure">Vas a eliminar tu cuenta y la información almacenada. ¿Estas seguro/a?</string>
+
+
+    <!-- Notification Channel -->
+    <string name="notification_channel_id">AvilaEnTapasChannelId</string>
+    <string name="notification_channel_name">AvilaEnTapasChannel</string>
+
+    <!-- Settings -->
+    <string name="developers">Desarrolladores</string>
+    <string name="remote_sources">Recursos Externos</string>
+    <string name="summary_developers">Alumnos que han desarrollado la aplicación</string>
+    <string name="summary_remote_source">Recursos de terceros que se han usado en la aplicación</string>
+    <string name="settings_shared">settings</string>
+    <string name="action_sharedpref">ThirdPartiesSharedPref</string>
+    <string name="autor_view">Autor: %1$s</string>
+    <string name="name_resours_view">Recurso: %1$s</string>
+    <string name="link_resours_view">Enlace: %1$s</string>
+    <string name="key_third_party">thirdParty</string>
+    <string name="key_data_user">key_data_user</string>
+    <string name="key_user">User</string>
+    <string name="summary_login">Controla y gestiona tus datos personales</string>
+    <string name="key_close_session">key_close_session</string>
+    <string name="key_remove_account">key_remove_account</string>
+    <string name="summary_close_session">Pulse aquí para cerrar la sesión, podrá volver a iniciarla.</string>
+    <string name="text_sing_out">Cerrar sesión</string>
+    <string name="text_remove_account">Eliminar cuenta</string>
+    <string name="summary_remove_account">Pulse aquí para eliminar todos tus datos. Se eliminaran también los votos.</string>
+    <string name="key_policy_privacity">policy privacy</string>
+    <string name="key_app_version">app version</string>
+    <string name="key_developers">developers</string>
+    <string name="url_policy_privacity">https://avilaentapas.sitehub.es/public/privacy_policy.html</string>
+    <string name="label_unknow_user">Nombre desconocido</string>
+    <string name="label_unknow_email">Email desconocido</string>
+    <string name="settings_title_user">Usuario</string>
+    <string name="settings_title_app">Aplicación</string>
+
+    <!-- Commons Errors-->
+    <string name="label_common_error">¡Ups! Ha ocurrido un error inesperado, por favor inténtalo de nuevo.</string>
+    <string name="label_emptylist">Lo sentimos, no se han encontrado información que mostrar.</string>
+    <string name="error_login">¡Error!</string>
+
+    <string name="title_main_text">¿Qué es una criptomoneda?</string>
+    <string name="body_main_text">Las criptomonedas, también llamadas criptodivisas o criptoactivos, son un medio digital de intercambio. Cumple la función de una moneda, y de ahí que se las conozca con ese nombre. Sin embargo, es algo totalmente digital, que utiliza métodos criptográficos para asegurar sus transacciones financieras, controlar la creación de nuevas unidades y verificar la transferencia de activos. \n Por lo tanto, podemos considerarlas como una alternativa descentralizada a las monedas digitales. Con el término descentralizada nos referimos a que estas monedas no son controladas por un único servicio o empresa. Lo mismo pasa con las monedas convencionales, centralizadas y organizadas por entidades y bancos, por lo que son un método opuesto a ambas.</string>
+    <string name="title_first_text">La primera criptomoneda</string>
+    <string name="body_first_text">La primera criptomoneda fue el Bitcoin creado por Satoshi Nakamoto, seudónimo que corresponde a una persona que nadie sabe exactamente quién es. Esta persona publicó en 2009 un artículo en el que describía un sistema de pagos P2P al que llamó Bitcoin. Al cabo de unos meses él mismo publicó la primera versión del software que permite gestionar la red de la moneda, y empieza a interactuar en foros con los primeros interesados. \n Todavía no se sabe realmente quién es esta persona, pero sí que se sabe que se ha convertido en una de las 20 personas más ricas del mundo. El Bitcoin y su tecnología han tenido tal impacto, que a lo largo de los años han ido llegando cada vez más alternativas, nuevas criptomonedas alternativas que han ido incrementando su valor con mayor o menor suerte. Desde entonces, como veremos un poco después, se han ido creando una gran cantidad de criptomonedas diferentes.</string>
+
 </resources>

@@ -91,7 +91,7 @@ class DetailCryptoCurrencyActivity : AppCompatActivity() {
 
 
         when {
-            coinModel.market_data.total_supply == "" -> binding.labelTotalSupply.text =
+            coinModel.market_data.total_supply == null -> binding.labelTotalSupply.text =
                 getString(R.string.empty_info)
             coinModel.description.en=="" -> binding.labelCurrentDescreption.text =
                 getString(R.string.empty_info)

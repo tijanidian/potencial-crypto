@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory
+        app:iconSpaceReserved="false"
+        app:title="Usuario">
+
+        <Preference
+            android:enabled="true"
+            android:fragment="cripto.potencial.tjdian.features.settings.presentation.SettingsFragment"
+            app:iconSpaceReserved="false"
+            app:key="key_data_user"
+            app:summary="(email desconocido)"
+            app:title="Usuario anónimo (sin registrar)" />
+
+        <PreferenceScreen
+            android:icon="@drawable/ic_google"
+            android:title="Login"
+            app:iconSpaceReserved="false">
+            <intent android:action=".features.login.presentation.LoginActivity" />
+
+        </PreferenceScreen>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        app:iconSpaceReserved="false"
+        app:title="Dark mode">
+
+    <SwitchPreferenceCompat
+        android:defaultValue="true"
+        android:icon="@drawable/ic_dark_mode"
+        android:key="key_dark_mode"
+        android:title="Dark mode"
+        app:defaultValue="false" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        app:iconSpaceReserved="false"
+        app:title="Colaboraciones">
+
+        <Preference
+            app:iconSpaceReserved="false"
+            app:key="key_developers"
+            app:summary="Alumnos que han desarrollado la aplicación"
+            app:title="Desarrolladores" />
+
+        <Preference
+            app:iconSpaceReserved="false"
+            app:key="key_third_party"
+            app:summary="Recursos de terceros que se han usado en la aplicación"
+            app:title="Recursos Externos" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        app:iconSpaceReserved="false"
+        app:title="Aplicación">
+
+        <!--        <Preference
+                    app:iconSpaceReserved="false"
+                    app:key="key_policy_privacity"
+                    app:summary="Pulse para ver la política de privacidad."
+                    app:title="Política de privacidad">
+                    &lt;!&ndash;<intent
+                        android:action="android.intent.action.VIEW"
+                        android:data="https://www.google.es/" />&ndash;&gt;
+                </Preference>-->
+
+        <Preference
+            android:enabled="true"
+            app:iconSpaceReserved="false"
+            app:key="key_app_version"
+            app:summary="1.0"
+            app:title="Versión instalada" />
+
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

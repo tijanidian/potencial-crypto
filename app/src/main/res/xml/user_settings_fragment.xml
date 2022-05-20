@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <Preference
+        app:iconSpaceReserved="false"
+        app:key="@string/key_close_session"
+        app:summary="@string/summary_close_session"
+        app:title="@string/text_sing_out" />
+
+    <Preference
+        app:iconSpaceReserved="false"
+        app:key="@string/key_remove_account"
+        app:summary="@string/summary_remove_account"
+        app:title="@string/text_remove_account" />
+
+</PreferenceScreen>

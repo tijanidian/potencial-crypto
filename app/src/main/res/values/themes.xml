@@ -13,6 +13,9 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
 
+        <!-- Elementos -->
+        <item name="materialAlertDialogTheme">@style/AlertDialogMaterialTheme</item>
+
     </style>
 
     <!-- ToolBar -->
@@ -22,5 +25,20 @@
         <item name="colorOnPrimary">@color/primaryColor</item>
     </style>
 
+    <style name="AlertDialogMaterialTheme" parent="ThemeOverlay.MaterialComponents.MaterialAlertDialog">
+        <item name="buttonBarPositiveButtonStyle">@style/OkAppTextButton</item>
+        <item name="buttonBarNegativeButtonStyle">@style/AppTextButton</item>
+    </style>
 
+    <style name="OkAppTextButton" parent="Widget.MaterialComponents.Button.TextButton.Dialog">
+        <item name="android:backgroundTint">@color/white</item>
+        <item name="android:textColor">@color/primaryColor</item>
+    </style>
+
+
+
+    <style name="AppTextButton" parent="Widget.MaterialComponents.Button.TextButton.Dialog">
+        <item name="android:backgroundTint">@color/white</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
 </resources>
