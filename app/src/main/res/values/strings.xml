@@ -32,7 +32,7 @@
 
     <string name="title_name_coin">Datos sobre %1$s</string>
     <string name="title_public_interest_score">Interes medio sobre #%1$s</string>
-    <string name="title_description_coin">Descripción sobre %1$s (Inglés)</string>
+    <string name="title_description_coin">Descripción sobre #%1$s (Inglés)</string>
 
     <string name="country_name">País: %1$s</string>
     <string name="type_hash_name_coin">Tipo de Hash: %1$s</string>

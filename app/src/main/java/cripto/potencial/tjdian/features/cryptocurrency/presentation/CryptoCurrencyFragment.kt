@@ -1,6 +1,7 @@
 package cripto.potencial.tjdian.features.cryptocurrency.presentation
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -63,7 +64,7 @@ class CryptoCurrencyFragment @Inject constructor() : Fragment() {
         cryptoAdapter.submitList(coins)
     }
     private fun showCryptoError() {
-
+        Log.d("@dev","error")
     }
     private fun hideLoading() {
         (requireActivity() as MainActivity).hideLoadingProgress()

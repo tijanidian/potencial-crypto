@@ -6,29 +6,29 @@ import cripto.potencial.tjdian.features.cryptocurrency.data.remote.detailremotea
 import cripto.potencial.tjdian.features.cryptocurrency.data.remote.detailremoteapimodel.MarketData
 
 data class CoinDetailModel(
-    val block_time_in_minutes: Int,
+    val blockTimeInMinutes: Int,
     val categories: List<String>,
-    val country_origin: String,
+    val countryOrigin: String,
     val description: Description,
-    val genesis_date: Any?,
-    val hashing_algorithm: String?,
+    val genesisDate: Any?,
+    val hashingAlgorithm: String?,
     val id: String,
     val image: Image,
-    val last_updated: String,
+    val lastUpdated: String,
     val links: Links,
-    val market_data: MarketData,
+    val marketData: MarketData,
     val name: String,
-    val public_interest_score: Double,
+    val publicInterestScore: Double,
     val symbol: String,
 )
 
 
 data class CoinModel(
-    val block_time_in_minutes: String?,
+    val blockTimeInMinutes: String?,
     val id: String,
     val image: ImageModel,
-    val last_updated: String,
-    val market_data: MarketDataModel,
+    val lastupDated: String,
+    val marketData: MarketDataModel,
     val name: String,
     val symbol: String
 )
@@ -40,16 +40,15 @@ data class ImageModel(
 )
 
 data class MarketDataModel(
-    val current_price: CurrentPriceModel?,
-    val market_cap: MarketCapModel,
-    val total_supply: String?
+    val currentPrice: CurrentPriceModel?,
+    val marketCap: MarketCapModel,
+    val totalSupply: String?
 )
 
 data class CurrentPriceModel(
     val eur: Float,
     val usd: Float,
-
-    )
+)
 
 data class MarketCapModel(
     val eur: Long,

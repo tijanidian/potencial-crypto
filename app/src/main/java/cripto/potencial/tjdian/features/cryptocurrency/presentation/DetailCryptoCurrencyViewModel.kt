@@ -22,8 +22,8 @@ class DetailCryptoCurrencyViewModel @Inject constructor(private val getCoinUseCa
 
     fun loadCoin(coinId: String) {
         viewModelScope.launch(Dispatchers.Main) {
-            val alert = getCoinUseCase.execute(coinId)
-            alert?.let {
+            val coin = getCoinUseCase.execute(coinId)
+            coin?.let {
                 _coinViewState.postValue(CryptoDetailViewState.fromDetailModel(it))
             }
         }

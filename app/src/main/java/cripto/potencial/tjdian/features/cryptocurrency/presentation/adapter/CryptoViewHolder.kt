@@ -20,9 +20,9 @@ class CryptoViewHolder(val view: View) : RecyclerView.ViewHolder(view) {
         binding.labelCryptoName.text=coinModel.name
         binding.cryptpImage.loadUrl(coinModel.image.small)
         binding.labelCryptoSymbol.text=view.context.getString(R.string.crypto_symbol, coinModel.symbol.uppercase())
-        binding.labelCryptoPrice.text=view.context.getString(R.string.crypto_price, coinModel.market_data.current_price?.eur.toString())
-        binding.labelCryptoMarketCap.text= view.context.getString(R.string.market_cap, coinModel.market_data.market_cap.eur.toString())
-        binding.labelCryptoTotalSupply.text=view.context.getString(R.string.total_supply, coinModel.market_data.total_supply)
+        binding.labelCryptoPrice.text=view.context.getString(R.string.crypto_price, coinModel.marketData.currentPrice?.eur.toString())
+        binding.labelCryptoMarketCap.text= view.context.getString(R.string.market_cap, coinModel.marketData.marketCap.eur.toString())
+        binding.labelCryptoTotalSupply.text=view.context.getString(R.string.total_supply, coinModel.marketData.totalSupply)
         itemView.setOnClickListener {
             startActivity(
                 view.context,
@@ -31,7 +31,7 @@ class CryptoViewHolder(val view: View) : RecyclerView.ViewHolder(view) {
             )
         }
 
-        if (coinModel.market_data.total_supply==null){
+        if (coinModel.marketData.totalSupply==null){
             binding.labelCryptoTotalSupply.text= view.context.getString(R.string.empty_info)
         }
     }

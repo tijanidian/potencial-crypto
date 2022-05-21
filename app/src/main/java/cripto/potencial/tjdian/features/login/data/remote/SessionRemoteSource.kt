@@ -19,7 +19,7 @@ class SessionRemoteSource @Inject constructor(@ApplicationContext private val co
         try {
             val user = FirebaseAuth.getInstance().currentUser
             user?.let {
-                //TODO Tijani, no podemos añadir "desconocido"
+
                 Result.success(
                     UserModel(
                         it.uid,

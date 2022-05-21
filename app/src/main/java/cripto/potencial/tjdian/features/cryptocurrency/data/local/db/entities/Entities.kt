@@ -29,12 +29,12 @@ data class CoinEntity(
     companion object {
         fun modelToEntity(coinModel: CoinModel): CoinEntity = CoinEntity(
             coinModel.id,
-            coinModel.block_time_in_minutes,
-            coinModel.last_updated,
+            coinModel.blockTimeInMinutes,
+            coinModel.lastupDated,
             coinModel.name,
             coinModel.symbol,
             ImageLocalModel.toLocalModel(coinModel.image),
-            CoinMarketDataLocalModel.toLocalModel(coinModel.market_data)
+            CoinMarketDataLocalModel.toLocalModel(coinModel.marketData)
         )
     }
 }
@@ -69,9 +69,9 @@ data class CoinMarketDataLocalModel(
     companion object {
         fun toLocalModel(marketDataModel: MarketDataModel): CoinMarketDataLocalModel =
             CoinMarketDataLocalModel(
-                marketDataModel.current_price,
-                marketDataModel.market_cap,
-                marketDataModel.total_supply
+                marketDataModel.currentPrice,
+                marketDataModel.marketCap,
+                marketDataModel.totalSupply
             )
     }
 }

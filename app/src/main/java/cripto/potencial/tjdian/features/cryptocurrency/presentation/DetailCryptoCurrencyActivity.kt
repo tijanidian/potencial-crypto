@@ -28,7 +28,6 @@ class DetailCryptoCurrencyActivity : AppCompatActivity() {
         setUpView()
         setupObservers()
         viewModel.loadCoin(getCoinId())
-
     }
 
     private fun setUpView() {
@@ -40,13 +39,12 @@ class DetailCryptoCurrencyActivity : AppCompatActivity() {
         supportActionBar?.title = getString(R.string.action_crypto)
     }
 
-
     private fun getCoinId(): String = intent.extras!!.getString(KEY_COIN_ID, "1")
 
     private fun setupObservers() {
         showLoading()
-        val nameObserver = Observer<CryptoDetailViewState> { alert ->
-            render(alert)
+        val nameObserver = Observer<CryptoDetailViewState> { detail ->
+            render(detail)
         }
         viewModel.coinViewState.observe(this, nameObserver)
     }
@@ -83,20 +81,22 @@ class DetailCryptoCurrencyActivity : AppCompatActivity() {
 
         //Titles
         binding.labelCryptoInfoTitle.text = getString(R.string.title_name_coin, coinModel.name)
-        binding.labelCryptoInfoTitle.text =
-            getString(R.string.title_public_interest_score, coinModel.name)
+
         binding.labelCryptoTitleDescription.text =
             getString(R.string.title_description_coin, coinModel.name)
 
 
 
         when {
+            coinModel.hashing_algorithm == null -> binding.labelTotalSupply.text =
+                getString(R.string.empty_info)
             coinModel.market_data.total_supply == null -> binding.labelTotalSupply.text =
                 getString(R.string.empty_info)
             coinModel.description.en=="" -> binding.labelCurrentDescreption.text =
                 getString(R.string.empty_info)
             coinModel.country_origin == "" -> binding.labelCountryOrigin.text =
                 getString(R.string.empty_info)
+
         }
 
     }

@@ -23,19 +23,19 @@ data class CryptoDetailViewState(
 ){
     companion object{
         fun fromDetailModel(coin:CoinDetailModel)=CryptoDetailViewState(
-            coin.block_time_in_minutes,
+            coin.blockTimeInMinutes,
             coin.categories,
-            coin.country_origin,
+            coin.countryOrigin,
             coin.description,
-            coin.genesis_date,
-            coin.hashing_algorithm,
+            coin.genesisDate,
+            coin.hashingAlgorithm,
             coin.id,
             coin.image,
-            coin.last_updated,
+            coin.lastUpdated,
             coin.links,
-            coin.market_data,
+            coin.marketData,
             coin.name,
-            coin.public_interest_score,
+            coin.publicInterestScore,
             coin.symbol,
         )
     }
