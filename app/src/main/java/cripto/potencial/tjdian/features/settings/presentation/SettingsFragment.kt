@@ -34,20 +34,16 @@ class SettingsFragment : PreferenceFragmentCompat() {
 
     private val viewModel: SettingsViewModel by viewModels()
 
-    private var count = 0
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         with(activity as MainActivity) {
-            setTitleToolbar("Ajustes")
+            setTitleToolbar(getString(R.string.action_settings))
             supportActionBar?.setDisplayHomeAsUpEnabled(false)
-
-
         }
         setUpObserver()
         setupViewStateObservables()
         viewModel.loadUserInfo()
-
 
     }
 
@@ -89,15 +85,7 @@ class SettingsFragment : PreferenceFragmentCompat() {
             loginClicked()
             true
         }
-        findPreference<Preference>("key_policy_privacity")?.setOnPreferenceClickListener {
-            //policyPrivacityListener()
 
-            true
-        }
-        findPreference<Preference>("key_login")?.setOnPreferenceClickListener {
-
-            true
-        }
         findPreference<Preference>("key_dark_mode")?.setOnPreferenceClickListener {
             darkMode()
             true
@@ -148,9 +136,9 @@ class SettingsFragment : PreferenceFragmentCompat() {
     }
 
     private fun setInfoUser(data: UserModel) {
-        findPreference<Preference>("key_data_user")?.let {
-            it.title = data.name ?: "label_unknow_user"
-            it.summary = data.email ?: "label_unknow_email"
+        findPreference<Preference>(getString(R.string.key_data_user))?.let {
+            it.title = data.name ?: getString(R.string.label_unknow_user)
+            it.summary = data.email ?: getString(R.string.label_unknow_email)
             data.urlPhoto?.let { url ->
                 it.isIconSpaceReserved = true
                 requireContext().getDrawableFromUrl(url, object : ImageUrlCallback {
@@ -175,11 +163,8 @@ class SettingsFragment : PreferenceFragmentCompat() {
         val bottomSheetBehavior = BottomSheetBehavior.from(bottomSheetView.parent as View)
         bottomSheetBehavior.setBottomSheetCallback(bottomSheetCallback)
 
-
         bottomSheetBehavior.state = BottomSheetBehavior.STATE_EXPANDED
         bottomSheetDialog.show()
-
-
 
     }
 

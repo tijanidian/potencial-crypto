@@ -4,8 +4,8 @@
     <!-- Button navigation-->
     <string name="action_crypto">Cryptos</string>
     <string name="action_potential_crypto">Potencial</string>
-    <string name="action_info_crypto">Conoce mas</string>
-    <string name="action_settings">Settings</string>
+    <string name="action_info_crypto">Conocer más</string>
+    <string name="action_settings">Ajustes</string>
 
     <!--Close app-->
     <string name="title_exit_app_are_you_sure">Salir de la aplicación</string>

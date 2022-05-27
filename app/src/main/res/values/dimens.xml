@@ -16,4 +16,15 @@
     <dimen name="body_1">16sp</dimen>
     <dimen name="body_2">14sp</dimen>
     <dimen name="body_3">12sp</dimen>
+    <dimen name="maring_10">10dp</dimen>
+    <dimen name="maring_20">20dp</dimen>
+    <dimen name="maring_30">30dp</dimen>
+    <dimen name="maring_40">40dp</dimen>
+    <dimen name="maring_50">50dp</dimen>
+    <dimen name="crypto_image">75dp</dimen>
+    <dimen name="crypto_login_image">400dp</dimen>
+    <dimen name="padding_15">15dp</dimen>
+
+
+
 </resources>
